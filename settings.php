@@ -18,7 +18,8 @@
  * Settings for the Portwallet payment gateway
  *
  * @package    paygw_portwallet
- * @copyright  2019 Shamim Rezaie <shamim@moodle.com>
+ * @copyright  2021 Brain station 23 ltd.
+ * @author     Brain station 23 ltd.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
