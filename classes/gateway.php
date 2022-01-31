@@ -62,9 +62,7 @@ class gateway extends \core_payment\gateway
      */
     public static function get_zero_decimal_currencies(): array
     {
-        return [
-            'BDT', 'USD'
-        ];
+        return []; // does not support zero decimal currencies 
     }
 
     /**

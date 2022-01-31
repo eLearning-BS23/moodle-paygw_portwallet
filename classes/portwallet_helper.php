@@ -74,7 +74,7 @@ class portwallet_helper
     public function generate_payment(object $config, string $currency, string $description, float $cost, string $component, string $paymentarea, string $itemid, int $courseid): void
     {
         global $CFG, $USER, $DB;
-        $unitamount = $this->get_unit_amount($cost, $currency); // price with surcharge
+        $unitamount = $cost;
 
         //$currency = strtolower($currency);
 
@@ -149,17 +149,5 @@ class portwallet_helper
         }
 
         header("location: {$paymentUrl}");
-    }
-
-    /**
-     * Convert the cost into the unit amount accounting for zero-decimal currencies.
-     */
-    public function get_unit_amount(float $cost, string $currency): float
-    {
-        if (in_array($currency, gateway::get_zero_decimal_currencies())) {
-            return $cost;
-        }
-
-        return $cost * 100;
     }
 }
