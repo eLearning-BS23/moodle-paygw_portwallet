@@ -30,7 +30,7 @@ $string['paymentmodes'] = 'Payment mode';
 $string['paymentmodes:sandbox'] = 'SandBox';
 $string['paymentmodes:live'] = 'Live';
 
-$string['apikey_help'] = 'Put your Api key from your port wallet application';
+$string['apikey_help'] = 'Put your App key from your port wallet application';
 $string['secretkey_help'] = 'Put your Secret key from your port wallet application';
 
 $string['gatewayname'] = 'PortWallet';
