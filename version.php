@@ -18,7 +18,8 @@
  * Version information
  *
  * @package    paygw_portwallet
- * @author     Munem Shahriar
+ * @copyright  2021 Brain station 23 ltd.
+ * @author     Brain station 23 ltd.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
