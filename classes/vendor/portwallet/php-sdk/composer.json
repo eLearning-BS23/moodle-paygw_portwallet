@@ -1,0 +1,28 @@
+{
+    "name": "portwallet/php-sdk",
+    "description": "PortWallet payment gateway PHP SDK for APIv2",
+    "type": "library",
+    "license": "apache-2.0",
+    "version": "1.0.8",
+    "authors": [
+        {
+            "name": "Sujan Mahmud",
+            "email": "sujan.mahmud@portonics.com"
+        },
+        {
+            "name": "Zohurul Islam",
+            "email": "zohurul.islam@portonics.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2",
+        "symfony/http-client": "^5.1",
+        "justinrainbow/json-schema": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "PortWallet\\": "lib"
+        }
+    }
+}
