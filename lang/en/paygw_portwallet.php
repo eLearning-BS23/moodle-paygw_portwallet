@@ -35,4 +35,4 @@ $string['secretkey_help'] = 'Put your Secret key from your port wallet applicati
 $string['gatewayname'] = 'PortWallet';
 $string['gatewaydescription'] = 'PortWallet is a payment gateway that allows merchants to expand their businesses online. Payments can be made with local and international debit or credit cards.';
 $string['paymentsuccessful'] = 'Your payment was successful, you are now enrolled';
-$string['paymentcancelled'] = 'Your payment was cancelled or failed';
+$string['paymentcancelled'] = 'Your payment was cancelled or failed, try again';

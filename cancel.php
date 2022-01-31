@@ -30,4 +30,4 @@ $courseid = required_param("id", PARAM_INT);
 
 $url = course_get_url($courseid);
 
-redirect($url, get_string('paymentcancelled', 'paygw_portwallet'));
+redirect($url, get_string('paymentcancelled', 'paygw_portwallet'), null, \core\output\notification::NOTIFY_ERROR);
