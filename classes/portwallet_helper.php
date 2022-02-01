@@ -76,7 +76,8 @@ class portwallet_helper
         global $CFG, $USER, $DB;
         $unitamount = $cost;
 
-        //$currency = strtolower($currency);
+        $sql = "SELECT fullname FROM {course} where id={$courseid}";
+        $coursename = $DB->get_record_sql($sql);
 
         $cus_name = $USER->firstname . ' ' . $USER->lastname;
         $cus_email = $USER->email;
@@ -110,7 +111,7 @@ class portwallet_helper
                 'validity' => 900,
             ),
             'product' => array(
-                'name' => 'x Polo T-shirt',
+                'name' => $coursename->fullname,
                 'description' => 'Course enrollment',
             ),
             'billing' => array(
