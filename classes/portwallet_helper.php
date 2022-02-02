@@ -107,7 +107,6 @@ class portwallet_helper
                 'currency' => $currency,
                 'redirect_url' => $CFG->wwwroot . '/payment/gateway/portwallet/process.php?id=' . $courseid . '&component=' . $component . '&paymentarea=' . $paymentarea . '&itemid=' . $itemid,
                 'ipn_url' => $CFG->wwwroot . '/payment/gateway/portwallet/ipn.php?id=' . $courseid,
-                'reference' => 'ABC123',
                 'validity' => 900,
             ),
             'product' => array(
