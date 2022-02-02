@@ -71,7 +71,7 @@ class portwallet_helper
      *
      * @throws PortWalletException
      */
-    public function generate_payment(object $config, string $currency, string $description, float $cost, string $component, string $paymentarea, string $itemid, int $courseid): void
+    public function generate_payment(string $currency, float $cost, string $component, string $paymentarea, string $itemid, int $courseid): void
     {
         global $CFG, $USER, $DB;
         $unitamount = $cost;
