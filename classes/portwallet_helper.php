@@ -127,10 +127,6 @@ class portwallet_helper
                     ),
                 ),
             ),
-            'emi' => [
-                'enable' => 1,
-                'tenures' => [],
-            ]
         );
         try {
             $invoice = $portWallet->invoice->create($data);
