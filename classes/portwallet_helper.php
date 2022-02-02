@@ -127,13 +127,6 @@ class portwallet_helper
                     ),
                 ),
             ),
-            'discount' => array(
-                'enable' => 1,
-                'codes' => array(
-                    0 => 'Bengal 1',
-                    1 => 'Bengal 2',
-                ),
-            ),
             'emi' => [
                 'enable' => 1,
                 'tenures' => [],
