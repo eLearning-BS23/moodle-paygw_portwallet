@@ -34,8 +34,6 @@ use PortWallet\PortWalletClient;
 defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/../.extlib/vendor/autoload.php');
-// require_once 'vendor/autoload.php';
-//require_once 'config.php';
 
 class portwallet_helper
 {
