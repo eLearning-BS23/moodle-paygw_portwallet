@@ -35,9 +35,7 @@ const showModalWithPlaceholder = async () => {
 };
 
 export const process = (component, paymentArea, itemId, description) => {
-  console.log("here");
   return showModalWithPlaceholder().then(() => {
-    console.log("here2");
     location.href =
       M.cfg.wwwroot +
       "/payment/gateway/portwallet/pay.php?" +

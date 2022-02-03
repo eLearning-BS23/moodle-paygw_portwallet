@@ -34,7 +34,8 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/../.extlib/vendor/autoload.php');
 
-class portwallet_helper {
+class portwallet_helper
+{
     /**
      * @var string API key
      */
@@ -55,7 +56,8 @@ class portwallet_helper {
      * Initialise the portwallet API client.
      *
      */
-    public function __construct(string $apikey, string $secretkey, string $mode) {
+    public function __construct(string $apikey, string $secretkey, string $mode)
+    {
         $this->apikey = $apikey;
         $this->secretkey = $secretkey;
         $this->paymentmode = $mode;
@@ -74,7 +76,8 @@ class portwallet_helper {
         string $component,
         string $paymentarea,
         string $itemid,
-        int $courseid): void {
+        int $courseid
+    ): void {
         global $CFG, $USER, $DB;
         $unitamount = $cost;
 
@@ -103,8 +106,8 @@ class portwallet_helper {
                 'amount' => $unitamount,
                 'currency' => $currency,
                 'redirect_url' => $CFG->wwwroot . '/payment/gateway/portwallet/process.php?id=' .
-                $courseid . '&component=' . $component .
-                '&paymentarea=' . $paymentarea . '&itemid=' . $itemid,
+                    $courseid . '&component=' . $component .
+                    '&paymentarea=' . $paymentarea . '&itemid=' . $itemid,
                 'validity' => 900,
             ),
             'product' => array(
@@ -117,7 +120,7 @@ class portwallet_helper {
                     'email' => $cusemail,
                     'phone' => !empty($cusphone) ? $cusphone : '01700000000',
                     'address' => array(
-                        'street' => $cusadd1 ?? 'No Address',
+                        'street' => !empty($cusadd1) ? $cusadd1 : 'No Address',
                         'city' => $cuscity,
                         'state' => $cuscity,
                         'zipcode' => $cuscity,
