@@ -26,14 +26,14 @@
 
 namespace paygw_portwallet;
 
+
 use PortWallet\Exceptions\PortWalletClientException;
 use PortWallet\PortWallet;
 use PortWallet\PortWalletClient;
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once 'vendor/autoload.php';
-//require_once 'config.php';
+require_once(__DIR__ . '/../.extlib/vendor/autoload.php');
 
 class portwallet_helper
 {
@@ -71,7 +71,7 @@ class portwallet_helper
      *
      * @throws PortWalletException
      */
-    public function generate_payment(object $config, string $currency, string $description, float $cost, string $component, string $paymentarea, string $itemid, int $courseid): void
+    public function generate_payment(string $currency, float $cost, string $component, string $paymentarea, string $itemid, int $courseid): void
     {
         global $CFG, $USER, $DB;
         $unitamount = $cost;
@@ -106,8 +106,6 @@ class portwallet_helper
                 'amount' => $unitamount,
                 'currency' => $currency,
                 'redirect_url' => $CFG->wwwroot . '/payment/gateway/portwallet/process.php?id=' . $courseid . '&component=' . $component . '&paymentarea=' . $paymentarea . '&itemid=' . $itemid,
-                'ipn_url' => $CFG->wwwroot . '/payment/gateway/portwallet/ipn.php?id=' . $courseid,
-                'reference' => 'ABC123',
                 'validity' => 900,
             ),
             'product' => array(
@@ -118,7 +116,7 @@ class portwallet_helper
                 'customer' => array(
                     'name' => $cus_name,
                     'email' => $cus_email,
-                    'phone' => $cus_phone,
+                    'phone' => !empty($cus_phone) ? $cus_phone : '01700000000',
                     'address' => array(
                         'street' => $cus_city,
                         'city' => $cus_city,
@@ -128,17 +126,6 @@ class portwallet_helper
                     ),
                 ),
             ),
-            'discount' => array(
-                'enable' => 1,
-                'codes' => array(
-                    0 => 'Bengal 1',
-                    1 => 'Bengal 2',
-                ),
-            ),
-            'emi' => [
-                'enable' => 1,
-                'tenures' => [],
-            ]
         );
         try {
             $invoice = $portWallet->invoice->create($data);

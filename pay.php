@@ -48,9 +48,7 @@ $portwallet_helper = new portwallet_helper(
     $config->paymentmodes
 );
 $portwallet_helper->generate_payment(
-    $config,
     $payable->get_currency(),
-    $description,
     $cost,
     $component,
     $paymentarea,
