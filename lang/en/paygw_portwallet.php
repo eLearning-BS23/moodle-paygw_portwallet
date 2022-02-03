@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'paygw_sslcommerz', language 'en'
+ * Strings for component 'paygw_portwallet', language 'en'
  *
  * @package    paygw_portwallet
  * @copyright  2021 Brain station 23 ltd.
