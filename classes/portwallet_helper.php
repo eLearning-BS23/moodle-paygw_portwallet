@@ -26,16 +26,17 @@
 namespace paygw_portwallet;
 
 
-use PortWallet\Exceptions\PortWalletClientException;
 use PortWallet\PortWallet;
+use InvalidArgumentException;
 use PortWallet\PortWalletClient;
+use PortWallet\Exceptions\PortWalletException;
+use PortWallet\Exceptions\PortWalletClientException;
 
 defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/../.extlib/vendor/autoload.php');
 
-class portwallet_helper
-{
+class portwallet_helper {
     /**
      * @var string API key
      */
@@ -56,8 +57,7 @@ class portwallet_helper
      * Initialise the portwallet API client.
      *
      */
-    public function __construct(string $apikey, string $secretkey, string $mode)
-    {
+    public function __construct(string $apikey, string $secretkey, string $mode) {
         $this->apikey = $apikey;
         $this->secretkey = $secretkey;
         $this->paymentmode = $mode;
