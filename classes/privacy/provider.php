@@ -35,16 +35,14 @@ use core_privacy\local\metadata\collection;
  * @author     Brain station 23 ltd.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class provider implements \core_privacy\local\metadata\provider, \core_privacy\local\request\data_provider
-{
+class provider implements \core_privacy\local\metadata\provider, \core_privacy\local\request\data_provider {
     /**
      * Returns metadata about this plugin.
      *
      * @param collection $collection The initialised collection to add items to.
      * @return collection A listing of user data stored in this plugin.
      */
-    public static function get_metadata(collection $collection): collection
-    {
+    public static function get_metadata(collection $collection): collection {
         $collection->add_database_table(
             'paygw_portwallet_customers',
             [

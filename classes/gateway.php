@@ -35,19 +35,17 @@ use core_payment\form\account_gateway;
  * @author     Brain station 23 ltd.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class gateway extends \core_payment\gateway
-{
+class gateway extends \core_payment\gateway {
     /**
      * The full list of currencies supported by portwallet regardless of account origin country.
      * Only certain currencies are supported based on the users account, the plugin does not account for that
      * when giving the list of supported currencies.
      *
-     * 
      *
-     * @return string[]
+     *
+     * @return array[]
      */
-    public static function get_supported_currencies(): array
-    {
+    public static function get_supported_currencies(): array {
         return [
             'BDT', 'USD'
         ];
@@ -56,13 +54,9 @@ class gateway extends \core_payment\gateway
     /**
      * The list of zero/non-decimal currencies in portwallet.
      *
-     * 
-     *
-     * @return string[]
      */
-    public static function get_zero_decimal_currencies(): array
-    {
-        return []; // does not support zero decimal currencies 
+    public static function get_zero_decimal_currencies(): array {
+        return []; // Does not support zero decimal currencies.
     }
 
     /**
@@ -72,8 +66,7 @@ class gateway extends \core_payment\gateway
      *
      * @param account_gateway $form
      */
-    public static function add_configuration_to_gateway_form(account_gateway $form): void
-    {
+    public static function add_configuration_to_gateway_form(account_gateway $form): void {
         $mform = $form->get_mform();
 
         $mform->addElement('text', 'apikey', get_string('apikey', 'paygw_portwallet'));

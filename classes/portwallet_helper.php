@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -35,8 +34,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/../.extlib/vendor/autoload.php');
 
-class portwallet_helper
-{
+class portwallet_helper {
     /**
      * @var string API key
      */
@@ -57,8 +55,7 @@ class portwallet_helper
      * Initialise the portwallet API client.
      *
      */
-    public function __construct(string $apikey, string $secretkey, string $mode)
-    {
+    public function __construct(string $apikey, string $secretkey, string $mode) {
         $this->apikey = $apikey;
         $this->secretkey = $secretkey;
         $this->paymentmode = $mode;
@@ -71,41 +68,43 @@ class portwallet_helper
      *
      * @throws PortWalletException
      */
-    public function generate_payment(string $currency, float $cost, string $component, string $paymentarea, string $itemid, int $courseid): void
-    {
+    public function generate_payment(
+        string $currency,
+        float $cost,
+        string $component,
+        string $paymentarea,
+        string $itemid,
+        int $courseid): void {
         global $CFG, $USER, $DB;
         $unitamount = $cost;
 
         $sql = "SELECT fullname FROM {course} where id={$courseid}";
         $coursename = $DB->get_record_sql($sql);
 
-        $cus_name = $USER->firstname . ' ' . $USER->lastname;
-        $cus_email = $USER->email;
-        $cus_add1 = $USER->address;
-        $cus_city = $USER->city;
-        $cus_country = $USER->country;
-        $cus_phone = $USER->phone1;
+        $cusname = $USER->firstname . ' ' . $USER->lastname;
+        $cusemail = $USER->email;
+        $cusadd1 = $USER->address;
+        $cuscity = $USER->city;
+        $cuscountry = $USER->country;
+        $cusphone = $USER->phone1;
 
-        /**
-         * mode switching default "sandbox"
-         */
+        // Mode switching default "sandbox".
         PortWallet::setApiMode($this->paymentmode);
 
-        //N.B.: API mode should be set first before creating an instance of PortWalletClient
+        // N.B.: API mode should be set first before
+        // creating an instance of PortWalletClient.
 
-        /**
-         * initiate the PortWallet client
-         */
-        $portWallet = new PortWalletClient($this->apikey, $this->secretkey);
+        // Initiate the PortWallet client.
+        $portwallet = new PortWalletClient($this->apikey, $this->secretkey);
 
-        /**
-         * Your data
-         */
+        // Your data.
         $data = array(
             'order' => array(
                 'amount' => $unitamount,
                 'currency' => $currency,
-                'redirect_url' => $CFG->wwwroot . '/payment/gateway/portwallet/process.php?id=' . $courseid . '&component=' . $component . '&paymentarea=' . $paymentarea . '&itemid=' . $itemid,
+                'redirect_url' => $CFG->wwwroot . '/payment/gateway/portwallet/process.php?id=' .
+                $courseid . '&component=' . $component .
+                '&paymentarea=' . $paymentarea . '&itemid=' . $itemid,
                 'validity' => 900,
             ),
             'product' => array(
@@ -114,28 +113,28 @@ class portwallet_helper
             ),
             'billing' => array(
                 'customer' => array(
-                    'name' => $cus_name,
-                    'email' => $cus_email,
-                    'phone' => !empty($cus_phone) ? $cus_phone : '01700000000',
+                    'name' => $cusname,
+                    'email' => $cusemail,
+                    'phone' => !empty($cusphone) ? $cusphone : '01700000000',
                     'address' => array(
-                        'street' => $cus_city,
-                        'city' => $cus_city,
-                        'state' => $cus_city,
-                        'zipcode' => $cus_city,
-                        'country' => $cus_country,
+                        'street' => $cusadd1 ?? 'No Address',
+                        'city' => $cuscity,
+                        'state' => $cuscity,
+                        'zipcode' => $cuscity,
+                        'country' => $cuscountry,
                     ),
                 ),
             ),
         );
         try {
-            $invoice = $portWallet->invoice->create($data);
-            $paymentUrl = $invoice->getPaymentUrl();
+            $invoice = $portwallet->invoice->create($data);
+            $paymenturl = $invoice->getPaymentUrl();
         } catch (InvalidArgumentException $ex) {
             echo $ex->getMessage();
         } catch (PortWalletException $ex) {
             echo $ex->getMessage();
         }
 
-        header("location: {$paymentUrl}");
+        header("location: {$paymenturl}");
     }
 }

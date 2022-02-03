@@ -44,9 +44,13 @@ $paymentrecord->timeupdated = time();
 $DB->insert_record("paygw_portwallet", $paymentrecord);
 
 if ($status == "ACCEPTED") {
-    header("Location: " . $CFG->wwwroot . '/payment/gateway/portwallet/success.php?id=' . $courseid . '&component=' . $component . '&paymentarea=' . $paymentarea . '&itemid=' . $itemid);
+    header("Location: " . $CFG->wwwroot .
+    '/payment/gateway/portwallet/success.php?id=' . $courseid .
+    '&component=' . $component . '&paymentarea=' . $paymentarea .
+    '&itemid=' . $itemid);
     exit();
 } else {
-    header("Location: " . $CFG->wwwroot . '/payment/gateway/portwallet/cancel.php?id=' . $courseid);
+    header("Location: " . $CFG->wwwroot .
+    '/payment/gateway/portwallet/cancel.php?id=' . $courseid);
     exit();
 }

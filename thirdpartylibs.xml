@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<libraries>
+    <library>
+        <location>.extlib/vendor</location>
+        <name>Portwallet PHP bindings</name>
+        <version>1.0</version>
+        <license>MIT License</license>
+        <licenseversion>1</licenseversion>
+    </library>
+</libraries>

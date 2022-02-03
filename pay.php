@@ -42,12 +42,12 @@ $payable    = helper::get_payable($component, $paymentarea, $itemid);
 $surcharge  = helper::get_gateway_surcharge('portwallet');
 $cost       = helper::get_rounded_cost($payable->get_amount(), $payable->get_currency(), $surcharge);
 
-$portwallet_helper = new portwallet_helper(
+$portwallethelper = new portwallet_helper(
     $config->apikey,
     $config->secretkey,
     $config->paymentmodes
 );
-$portwallet_helper->generate_payment(
+$portwallethelper->generate_payment(
     $payable->get_currency(),
     $cost,
     $component,
