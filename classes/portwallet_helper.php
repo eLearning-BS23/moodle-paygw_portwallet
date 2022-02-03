@@ -116,7 +116,7 @@ class portwallet_helper
                 'customer' => array(
                     'name' => $cus_name,
                     'email' => $cus_email,
-                    'phone' => $cus_phone,
+                    'phone' => !empty($cus_phone) ? $cus_phone : '01700000000',
                     'address' => array(
                         'street' => $cus_city,
                         'city' => $cus_city,
