@@ -27,7 +27,7 @@ You can download zip file and install or you can put file under payment gateway 
 ```
 In this page you can add surcharge for the payments. After installing the plugin you'll automatically redirected to this page.
 
-
+![image_2022_02_09T06_29_33_937Z](https://user-images.githubusercontent.com/97436713/153134639-3852f97f-6a9b-451d-b997-242317bc5cab.png)
 
 ## Configuring the SSLCommerz Gateway:
 ### Step: 1
@@ -35,3 +35,4 @@ In this page you can add surcharge for the payments. After installing the plugin
 ```
   Dashboard->Site Administration->Plugins->Payment Gateways->Portwallet settings
 ```
+![portwallet2](https://user-images.githubusercontent.com/97436713/153134845-a0ea0273-0ad8-4afc-a70c-90d68db8766a.png)
