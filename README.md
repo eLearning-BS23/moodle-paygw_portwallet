@@ -47,8 +47,8 @@ In this page you can add surcharge for the payments. After installing the plugin
 ### Step: 2 
 - Go to the Manage Enrolment Plugins section from the site administration
 ```
-
 Dashboard->Site Administration->Plugins->Enrolments->Manage Enrol Plugins
+```
 
 ![portwallet3](https://user-images.githubusercontent.com/97436713/153135098-3492f3d1-9dc6-401d-81b1-ad86f6f01494.png)
   
