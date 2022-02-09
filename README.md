@@ -16,6 +16,22 @@ PortWallet is the best and simplest way to accept payments online in Bangladesh.
 
 ## Configuration
 
-You can install this plugin from [Moodle plugins directory](https://moodle.org/plugins) or can download from [Github](https://github.com/eLearning-BS23/paygw_sslcommerz).
+You can install this plugin from [Moodle plugins directory](https://moodle.org/plugins) or can download from [Github](https://github.com/eLearning-BS23/moodle-paygw_portwallet).
 
 You can download zip file and install or you can put file under payment gateway portwallet
+
+## Plugin Global Settings
+### Go to 
+```
+  Dashboard->Site Administration->Plugins->Payment Gateways->portwallet settings
+```
+In this page you can add surcharge for the payments. After installing the plugin you'll automatically redirected to this page.
+
+
+
+## Configuring the SSLCommerz Gateway:
+### Step: 1
+
+```
+  Dashboard->Site Administration->Plugins->Payment Gateways->Portwallet settings
+```
