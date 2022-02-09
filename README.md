@@ -7,9 +7,15 @@ PortWallet is the best and simplest way to accept payments online in Bangladesh.
 ![visa-master-card-bkash-nexus-logo](https://user-images.githubusercontent.com/97436713/153133264-a3bc6cd4-d7f9-4cf2-a7ee-7522753c9c60.png)
 
 ## Features
-- Supports Visa, MasterCard, bKash, Nexus, surecash, Islami Bank
+- Supports Visa, MasterCard, bKash, DBBL Nexus, surecash, Mcash Islami Bank
 - Easy Integration
 - Personalised payment experience
 - Secure OTP based access to save cards
 - Bi-lingual Support
 - Add vat or surcharge
+
+## Configuration
+
+You can install this plugin from [Moodle plugins directory](https://moodle.org/plugins) or can download from [Github](https://github.com/eLearning-BS23/paygw_sslcommerz).
+
+You can download zip file and install or you can put file under payment gateway portwallet
