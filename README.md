@@ -62,7 +62,7 @@ Enable Portwallet to the payment gateways:
   Dashboard->Site Administration->Plugins->Enrolments->Manage Enrol Plugins
 ```
 
-[portwallet4](https://user-images.githubusercontent.com/97436713/153136738-9a7a6062-3339-4170-9907-018a6ba2f4e0.png)
+![portwallet4](https://user-images.githubusercontent.com/97436713/153136738-9a7a6062-3339-4170-9907-018a6ba2f4e0.png)
 
 ## Enrolment Settings for Course: 
 
