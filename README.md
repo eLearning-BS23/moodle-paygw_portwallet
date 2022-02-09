@@ -2,7 +2,7 @@
 
 PortWallet is a payment gateway that allows merchants to expand their businesses online. Your customers will be able to buy products online with ease and security. Payments can be made with local and international debit or credit cards.
 
-PortWallet is the best and simplest way to accept payments online in Bangladesh. PortWallet aims to expand the infrastructure of internet commerce by making it easy to process transactions and manage an online business. For more detail about `SSLCOMMERZ` please visit https://www.portwallet.com/.
+PortWallet is the best and simplest way to accept payments online in Bangladesh. PortWallet aims to expand the infrastructure of internet commerce by making it easy to process transactions and manage an online business. For more detail about `PORTWALET` please visit https://www.portwallet.com/.
 
 ![visa-master-card-bkash-nexus-logo](https://user-images.githubusercontent.com/97436713/153133264-a3bc6cd4-d7f9-4cf2-a7ee-7522753c9c60.png)
 
@@ -10,9 +10,9 @@ PortWallet is the best and simplest way to accept payments online in Bangladesh.
 - Supports Visa, MasterCard, bKash, DBBL Nexus, surecash, Mcash Islami Bank
 - Easy Integration
 - Personalised payment experience
-- Secure OTP based access to save cards
 - Bi-lingual Support
 - Add vat or surcharge
+- Invoicing Platform SendBill
 
 ## Configuration
 
@@ -21,9 +21,9 @@ You can install this plugin from [Moodle plugins directory](https://moodle.org/p
 You can download zip file and install or you can put file under payment gateway portwallet
 
 ## Plugin Global Settings
-### Go to 
+### Go to
 ```
-  Dashboard->Site Administration->Plugins->Payment Gateways->portwallet settings
+Dashboard->Site Administration->Plugins->Payment Gateways->portwallet settings
 ```
 In this page you can add surcharge for the payments. After installing the plugin you'll automatically redirected to this page.
 
@@ -31,40 +31,36 @@ In this page you can add surcharge for the payments. After installing the plugin
 
 ## Configuring the Portwallet Gateway:
 ### Step: 1
-
 ```
-  Dashboard->Site Administration->Plugins->Payment Gateways->Portwallet settings
+Dashboard / Site administration / Plugins / Payment gateways / Manage payment gateways / Gateways->Portwallet settings
+```
+![image](https://user-images.githubusercontent.com/8987681/153161035-7c4a3a6f-aa52-4ed3-bbf5-5465513ae230.png)
+
+Enable Portwallet to the payment gateways
+
+### Step: 2
+```
+Dashboard->Site Administration->Plugins->Payment Gateways->Portwallet settings
 ```
 ![portwallet2](https://user-images.githubusercontent.com/97436713/153134845-a0ea0273-0ad8-4afc-a70c-90d68db8766a.png)
 
-- Insert the SSLCOMMERZ api v3 url https://sandbox.sslcommerz.com/gwprocess/v3/api.php
-- Insert sslcommerz validetion url https://sandbox.sslcommerz.com/validator/api/validationserverAPI.php
-- Insert the Store id that provided by sslcommerz
-- Insert Store Password provided by sslcommerz
-- Insert production environment like sandbox or live server 
+- Insert the Portwallet apikey provided by Portwallet
+- Insert the Portwallet secrect key provided by Portwallet
+- Insert production environment like sandbox or live server
 - Click the "save changes" button to save the information
 
-### Step: 2 
+### Step: 3
 - Go to the Manage Enrolment Plugins section from the site administration
 ```
 Dashboard->Site Administration->Plugins->Enrolments->Manage Enrol Plugins
 ```
 
 ![portwallet3](https://user-images.githubusercontent.com/97436713/153135098-3492f3d1-9dc6-401d-81b1-ad86f6f01494.png)
-  
+
 Enable Enrolment on payment by clicking the eye icon.
 
-### Step: 3
 
-Enable Portwallet to the payment gateways:
-
-```
-  Dashboard->Site Administration->Plugins->Enrolments->Manage Enrol Plugins
-```
-
-![portwallet4](https://user-images.githubusercontent.com/97436713/153136738-9a7a6062-3339-4170-9907-018a6ba2f4e0.png)
-
-## Enrolment Settings for Course: 
+## Enrolment Settings for Course:
 
 Now click on the course page and add an enrolment method Enrolment of Payment.
 
@@ -78,7 +74,7 @@ This is how it looks like from a student's perspective:
 
 ![portwallet5](https://user-images.githubusercontent.com/97436713/153136854-31f92d49-9161-4922-90ca-c5d4224228c8.png)
 
-Select the Payment Type- SSLCommerz the surcharge is added with the course payment amount
+Select the Payment Type- Portwallet the surcharge is added with the course payment amount
 
 ![portwallet6](https://user-images.githubusercontent.com/97436713/153136966-83fd5e35-a62b-401b-96fa-926d83766c8d.png)
 

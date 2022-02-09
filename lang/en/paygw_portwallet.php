@@ -26,7 +26,7 @@
 $string['pluginname'] = 'PortWallet';
 $string['secretkey'] = 'Secret key';
 $string['apikey'] = 'Api key';
-$string['paymentmodes'] = 'Payment mode';
+$string['paymentmodes'] = 'Payment Environment';
 $string['paymentmodes:sandbox'] = 'SandBox';
 $string['paymentmodes:live'] = 'Live';
 
