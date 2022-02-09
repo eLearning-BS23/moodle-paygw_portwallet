@@ -56,7 +56,7 @@ Enable Enrolment on payment by clicking the eye icon.
 
 ### Step: 3
 
-Enable Portwallet to the payment gateways 
+Enable Portwallet to the payment gateways:
 
 ```
   Dashboard->Site Administration->Plugins->Enrolments->Manage Enrol Plugins
