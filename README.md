@@ -67,8 +67,11 @@ Enable Portwallet to the payment gateways:
 
 Now click on the course page and add an enrolment method Enrolment of Payment.
 
+![image_2022_02_09T06_59_16_460Z](https://user-images.githubusercontent.com/97436713/153138641-93f67f96-9bc1-44bf-afbd-8641b0bd8821.png)
 
 and fill up this form below to set the amount of money and currency for the course payment
+
+![image_2022_02_09T07_00_11_382Z](https://user-images.githubusercontent.com/97436713/153138610-ff83dcde-ebc2-430f-a870-2b612203a576.png)
 
 This is how it looks like from a student's perspective:
 
