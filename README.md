@@ -29,10 +29,72 @@ In this page you can add surcharge for the payments. After installing the plugin
 
 ![image_2022_02_09T06_29_33_937Z](https://user-images.githubusercontent.com/97436713/153134639-3852f97f-6a9b-451d-b997-242317bc5cab.png)
 
-## Configuring the SSLCommerz Gateway:
+## Configuring the Portwallet Gateway:
 ### Step: 1
 
 ```
   Dashboard->Site Administration->Plugins->Payment Gateways->Portwallet settings
 ```
 ![portwallet2](https://user-images.githubusercontent.com/97436713/153134845-a0ea0273-0ad8-4afc-a70c-90d68db8766a.png)
+
+- Insert the SSLCOMMERZ api v3 url https://sandbox.sslcommerz.com/gwprocess/v3/api.php
+- Insert sslcommerz validetion url https://sandbox.sslcommerz.com/validator/api/validationserverAPI.php
+- Insert the Store id that provided by sslcommerz
+- Insert Store Password provided by sslcommerz
+- Insert production environment like sandbox or live server 
+- Click the "save changes" button to save the information
+
+### Step: 2 
+- Go to the Manage Enrolment Plugins section from the site administration
+```
+  Dashboard->Site Administration->Plugins->Enrolments->Manage Enrol Plugins
+  
+  ![portwallet3](https://user-images.githubusercontent.com/97436713/153135098-3492f3d1-9dc6-401d-81b1-ad86f6f01494.png)
+  
+  Enable Enrolment on payment by clicking the eye icon.
+
+### Step: 3
+
+Enable Portwallet to the payment gateways 
+
+```
+  Dashboard->Site Administration->Plugins->Enrolments->Manage Enrol Plugins
+```
+![portwallet4](https://user-images.githubusercontent.com/97436713/153136738-9a7a6062-3339-4170-9907-018a6ba2f4e0.png)
+
+## Enrolment Settings for Course: 
+
+Now click on the course page and add an enrolment method Enrolment of Payment.
+
+
+and fill up this form below to set the amount of money and currency for the course payment
+
+This is how it looks like from a student's perspective:
+
+![portwallet5](https://user-images.githubusercontent.com/97436713/153136854-31f92d49-9161-4922-90ca-c5d4224228c8.png)
+
+Select the Payment Type- SSLCommerz the surcharge is added with the course payment amount
+
+![portwallet6](https://user-images.githubusercontent.com/97436713/153136966-83fd5e35-a62b-401b-96fa-926d83766c8d.png)
+
+Select any payment method:
+
+![portwallet7dsfdf](https://user-images.githubusercontent.com/97436713/153137454-00577764-8598-4ff9-987e-8eb441a449e7.png)
+
+Give details of your card:
+
+![portwallet8ds](https://user-images.githubusercontent.com/97436713/153137554-2227af1a-bad7-4cb0-9893-d91122eea711.png)
+
+If you payment is successful then you'll be enrolled in the course:
+
+![portwallet10](https://user-images.githubusercontent.com/97436713/153137634-d6de0826-814c-493b-9513-9eef9665c714.png)
+
+## Author
+- [Brain Station 23 Ltd.](https://brainstation-23.com)
+
+## License
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see [GNU License](http://www.gnu.org/licenses/).
