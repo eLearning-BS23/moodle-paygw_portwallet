@@ -36,7 +36,6 @@ $paymentarea = required_param('paymentarea', PARAM_ALPHANUMEXT);
 $itemid      = required_param('itemid', PARAM_INT);
 $description = required_param('description', PARAM_TEXT);
 
-$courseid   = $DB->get_field('enrol', 'courseid', ['enrol' => 'fee', 'id' => $itemid]);
 $config     = (object) helper::get_gateway_configuration($component, $paymentarea, $itemid, 'portwallet');
 $payable    = helper::get_payable($component, $paymentarea, $itemid);
 $surcharge  = helper::get_gateway_surcharge('portwallet');
@@ -52,6 +51,5 @@ $portwallethelper->generate_payment(
     $cost,
     $component,
     $paymentarea,
-    $itemid,
-    $courseid
+    $itemid
 );
