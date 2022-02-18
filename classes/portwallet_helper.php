@@ -31,6 +31,7 @@ use InvalidArgumentException;
 use PortWallet\PortWalletClient;
 use PortWallet\Exceptions\PortWalletException;
 use PortWallet\Exceptions\PortWalletClientException;
+use stdClass;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -83,8 +84,15 @@ class portwallet_helper
         $unitamount = $cost;
 
         $courseid = $DB->get_field('enrol', 'courseid', ['enrol' => 'fee', 'id' => $itemid]);
-        $sql = "SELECT fullname FROM {course} where id={$courseid}";
-        $coursename = $DB->get_record_sql($sql);
+        if ($courseid !== false) {
+            $sql = "SELECT fullname FROM {course} where id={$courseid}";
+            $coursename = $DB->get_record_sql($sql);
+            $coursename->description = get_string('coursepay', 'paygw_portwallet');
+        } else {
+            $coursename = new stdClass();
+            $coursename->fullname = "Course element";
+            $coursename->description = get_string('itempay', 'paygw_portwallet');
+        }
 
         $cusname = $USER->firstname . ' ' . $USER->lastname;
         $cusemail = $USER->email;
@@ -113,7 +121,7 @@ class portwallet_helper
             ),
             'product' => array(
                 'name' => $coursename->fullname,
-                'description' => 'Course enrollment',
+                'description' => $coursename->description,
             ),
             'billing' => array(
                 'customer' => array(
