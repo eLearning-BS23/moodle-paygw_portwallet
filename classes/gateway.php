@@ -36,19 +36,12 @@ use core_payment\form\account_gateway;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class gateway extends \core_payment\gateway {
+
     /**
-     * The full list of currencies supported by portwallet regardless of account origin country.
-     * Only certain currencies are supported based on the users account, the plugin does not account for that
-     * when giving the list of supported currencies.
-     *
-     *
-     *
-     * @return array[]
+     * @inheritDoc
      */
     public static function get_supported_currencies(): array {
-        return [
-            'BDT', 'USD'
-        ];
+        return ['BDT'];
     }
 
     /**
