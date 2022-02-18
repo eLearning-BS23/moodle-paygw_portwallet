@@ -27,8 +27,8 @@ require_once(__DIR__ . '/../../../config.php');
 require_once($CFG->dirroot . '/course/lib.php');
 require_login();
 
-$courseid = required_param("id", PARAM_INT);
+$itemid      = required_param('itemid', PARAM_INT);
 
-$url = course_get_url($courseid);
+$url = $DB->get_field('enrol', 'courseid', ['enrol' => 'fee', 'id' => $itemid]);
 
 redirect($url, get_string('paymentcancelled', 'paygw_portwallet'), null, \core\output\notification::NOTIFY_ERROR);

@@ -45,12 +45,12 @@ $DB->insert_record("paygw_portwallet", $paymentrecord);
 
 if ($status == "ACCEPTED") {
     header("Location: " . $CFG->wwwroot .
-    '/payment/gateway/portwallet/success.php?id=' . $courseid .
-    '&component=' . $component . '&paymentarea=' . $paymentarea .
-    '&itemid=' . $itemid);
+        '/payment/gateway/portwallet/success.php?id=' . $courseid .
+        '&component=' . $component . '&paymentarea=' . $paymentarea .
+        '&itemid=' . $itemid);
     exit();
 } else {
     header("Location: " . $CFG->wwwroot .
-    '/payment/gateway/portwallet/cancel.php?id=' . $courseid);
+        '/payment/gateway/portwallet/cancel.php?itemid=' . $itemid);
     exit();
 }
