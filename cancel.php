@@ -23,13 +23,26 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use core_payment\helper;
+
 require_once(__DIR__ . '/../../../config.php');
 require_once($CFG->dirroot . '/course/lib.php');
 require_login();
 
-$itemid      = required_param('itemid', PARAM_INT);
+$component = required_param('component', PARAM_ALPHANUMEXT);
+$paymentarea = required_param('paymentarea', PARAM_ALPHANUMEXT);
+$itemid = required_param('itemid', PARAM_INT);
 
-$courseid = $DB->get_field('enrol', 'courseid', ['enrol' => 'fee', 'id' => $itemid]);
-$url = course_get_url($courseid);
+// Find redirection.
+$url = new moodle_url('/');
+// Method only exists in 3.11+.
+if (method_exists('\core_payment\helper', 'get_success_url')) {
+    $url = helper::get_success_url($component, $paymentarea, $itemid);
+} else if ($component == 'enrol_fee' && $paymentarea == 'fee') {
+    $courseid = $DB->get_field('enrol', 'courseid', ['enrol' => 'fee', 'id' => $itemid]);
+    if (!empty($courseid)) {
+        $url = course_get_url($courseid);
+    }
+}
 
 redirect($url, get_string('paymentcancelled', 'paygw_portwallet'), null, \core\output\notification::NOTIFY_ERROR);
