@@ -36,7 +36,8 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/../.extlib/vendor/autoload.php');
 
-class portwallet_helper {
+class portwallet_helper
+{
     /**
      * @var string API key
      */
@@ -57,7 +58,8 @@ class portwallet_helper {
      * Initialise the portwallet API client.
      *
      */
-    public function __construct(string $apikey, string $secretkey, string $mode) {
+    public function __construct(string $apikey, string $secretkey, string $mode)
+    {
         $this->apikey = $apikey;
         $this->secretkey = $secretkey;
         $this->paymentmode = $mode;
@@ -75,12 +77,12 @@ class portwallet_helper {
         float $cost,
         string $component,
         string $paymentarea,
-        string $itemid,
-        int $courseid
+        string $itemid
     ): void {
         global $CFG, $USER, $DB;
         $unitamount = $cost;
 
+        $courseid = $DB->get_field('enrol', 'courseid', ['enrol' => 'fee', 'id' => $itemid]);
         $sql = "SELECT fullname FROM {course} where id={$courseid}";
         $coursename = $DB->get_record_sql($sql);
 
@@ -105,8 +107,7 @@ class portwallet_helper {
             'order' => array(
                 'amount' => $unitamount,
                 'currency' => $currency,
-                'redirect_url' => $CFG->wwwroot . '/payment/gateway/portwallet/process.php?id=' .
-                    $courseid . '&component=' . $component .
+                'redirect_url' => $CFG->wwwroot . '/payment/gateway/portwallet/process.php?component=' . $component .
                     '&paymentarea=' . $paymentarea . '&itemid=' . $itemid,
                 'validity' => 900,
             ),

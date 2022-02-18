@@ -28,13 +28,11 @@ global $CFG, $USER, $DB;
 
 require_login();
 $status = required_param('status', PARAM_TEXT);
-$courseid = required_param("id", PARAM_INT);
 $component = required_param('component', PARAM_ALPHANUMEXT);
 $paymentarea = required_param('paymentarea', PARAM_ALPHANUMEXT);
 $itemid = required_param('itemid', PARAM_INT);
 
 $paymentrecord = new stdClass();
-$paymentrecord->courseid = $courseid;
 $paymentrecord->itemid = $itemid;
 $paymentrecord->userid = $USER->id;
 $paymentrecord->currency = required_param('currency', PARAM_TEXT);
@@ -45,8 +43,7 @@ $DB->insert_record("paygw_portwallet", $paymentrecord);
 
 if ($status == "ACCEPTED") {
     header("Location: " . $CFG->wwwroot .
-        '/payment/gateway/portwallet/success.php?id=' . $courseid .
-        '&component=' . $component . '&paymentarea=' . $paymentarea .
+        '/payment/gateway/portwallet/success.php?component=' . $component . '&paymentarea=' . $paymentarea .
         '&itemid=' . $itemid);
     exit();
 } else {
