@@ -48,6 +48,7 @@ if ($status == "ACCEPTED") {
     exit();
 } else {
     header("Location: " . $CFG->wwwroot .
-        '/payment/gateway/portwallet/cancel.php?itemid=' . $itemid);
+        '/payment/gateway/portwallet/cancel.php?component=' . $component . '&paymentarea=' . $paymentarea .
+        '&itemid=' . $itemid);
     exit();
 }
