@@ -29,6 +29,7 @@ require_login();
 
 $itemid      = required_param('itemid', PARAM_INT);
 
-$url = $DB->get_field('enrol', 'courseid', ['enrol' => 'fee', 'id' => $itemid]);
+$courseid = $DB->get_field('enrol', 'courseid', ['enrol' => 'fee', 'id' => $itemid]);
+$url = course_get_url($courseid);
 
 redirect($url, get_string('paymentcancelled', 'paygw_portwallet'), null, \core\output\notification::NOTIFY_ERROR);
